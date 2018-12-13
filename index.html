@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="description" content="SMAD Equities Documentations">
+    <title>SMAD Equities Docs</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify-themeable/dist/css/theme-simple.css" title="Simple">
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- JavaScript -->
+    <script>
+        window.$docsify = {
+            // GENERAL
+            // -----------------------------------------------------------------
+            name       : 'SMAD Equities Docs',
+            repo       : '',
+            homepage   : 'home.md',
+            loadSidebar: 'sidebar.md',
+            // routerMode : 'history',
+
+            // NAVIGATION
+            // -----------------------------------------------------------------
+            auto2top   : true,
+            maxLevel   : 3,
+            subMaxLevel: 3,
+
+            // PLUGINS
+            // -----------------------------------------------------------------
+            search: {
+                depth      : 3,
+                noData     : 'No results!',
+                placeholder: 'Type to search...'
+            },
+            tabs: {
+                persist    : true,       // default
+                sync       : false,      // default: true
+                theme      : 'material', // default
+                tabComments: true,       // default
+                tabHeadings: true        // default
+            },
+        };
+    </script>
+    <!-- CDN files for docsify-katex -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+    <!-- Put them above docsify.min.js -->
+
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="https://unpkg.com/docsify-themeable"></script>
+    <script src="https://unpkg.com/docsify-tabs"></script>
+
+    <!-- Latest v2.x.x -->
+    <script src="https://unpkg.com/docsify-copy-code@2"></script>
+
+    <script src="https://unpkg.com/docsify/lib/plugins/search.js"></script>
+</body>
+</html>
