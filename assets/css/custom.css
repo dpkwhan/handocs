@@ -1,5 +1,5 @@
-:root {
-  --content-max-width: 90%
+.markdown-section {
+  max-width: 90%
 }
 
 .right {
