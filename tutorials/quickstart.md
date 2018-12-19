@@ -2,9 +2,9 @@
 
 ## Git Checkout
 
-1. [Create a docsify site](//docsify.js.org/#/quickstart) by following the instructions on the [docsify.js](//docsify.js.org) website.
+1. You can checkout the project from [Github](https://github.com/dpkwhan/docs).
 
-1. Add the docsify-themeable plugin `<script>` to your `index.html`:
+1. Additional plugins can be added to your `index.html`:
 
    ```html
    <!-- docsify (also available on jsdelivr.com -->
