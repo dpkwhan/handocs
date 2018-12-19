@@ -1,4 +1,4 @@
-![logo](assets/img/logo.svg)
+![logo](assets/img/logo.svg ':size=150%')
 
 # data driven dynamics <small>d3</small>
 
@@ -6,7 +6,7 @@
 
 - data visualization
 - web scrapers
-- algo order forensics
+- algo forensic evaluation
 
 [GitHub](https://github.com/dpkwhan/docs/)
 [Getting Started](/home)
