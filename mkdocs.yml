@@ -22,6 +22,8 @@ nav:
   - Markets:
       - Rules and Regulations:
           - markets/rar/ssr.md
+      - Financial Data:
+          - markets/data/finra-ats.md
 
 theme:
   name: "material"

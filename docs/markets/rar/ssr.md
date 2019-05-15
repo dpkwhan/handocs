@@ -17,13 +17,13 @@ Some research leads me to the [NYSE TAQ Specifications][NYSE TAQ]. On page 24, i
 Next I went to Yahoo Finance to check the OHLC prices for the days before May 8, 2019 as shown below:
 
 <span style="display:block;text-align:center">
-![LMNX OHLC](/assets/images/markets/lmnx-ohlc.jpg)
+![LMNX OHLC](../../../assets/images/markets/lmnx-ohlc.jpg)
 </span>
 
 Clearly the intraday price dropped more than 10% from its previous close on May 7, 2019, which activated the short sell restriction. So the trading on May 8 is also under SSR. Why did the price drop so much on May 7, 2019? A little further digging shows this is due to the much worse earnings than the average expectation repored after market close on May 6, 2019. The earnings surprise is -200%.
 
 <span style="display:block;text-align:center">
-![LMNX Earnings](/assets/images/markets/lmnx-earnings.jpg)
+![LMNX Earnings](../../../assets/images/markets/lmnx-earnings.jpg)
 </span>
 
 [NYSE TAQ]: https://www.nyse.com/publicdocs/nyse/data/Daily_TAQ_Client_Spec_v3.0.pdf

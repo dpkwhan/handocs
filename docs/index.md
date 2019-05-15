@@ -2,6 +2,4 @@
 
 This is a static documentation site.
 
-$$
-\frac{n!}{k!(n-k)!} = \binom{n}{k}
-$$
+[Github Pages](https://dpkwhan.github.io/handocs/)
