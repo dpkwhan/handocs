@@ -25,6 +25,10 @@ nav:
       - Financial Data:
           - markets/data/finra-ats.md
 
+google_analytics:
+  - "UA-140259656-1"
+  - "auto"
+
 theme:
   name: "material"
   palette:
