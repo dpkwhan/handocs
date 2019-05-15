@@ -38,8 +38,8 @@ extra:
 
 theme:
   name: "material"
-  logo: "../assets/images/profile-pic.jpg"
-  favicon: "../assets/images/profile-pic.jpg"
+  logo: "./assets/images/profile-pic.jpg"
+  favicon: "./assets/images/profile-pic.jpg"
   palette:
     primary: "indigo"
     accent: "deep-orange"
