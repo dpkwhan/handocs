@@ -7,7 +7,7 @@ copyright: "Copyright &copy; 2019 David Han"
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
+  - About me: aboutme.md
   - Kdb/q:
       - Dictionary:
           - kdb/dictionary/add-new-item-to-dictionary.md
@@ -29,8 +29,17 @@ google_analytics:
   - "UA-140259656-1"
   - "auto"
 
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/dpkwhan"
+    - type: "linkedin"
+      link: "https://www.linkedin.com/in/zhaohuihan/"
+
 theme:
   name: "material"
+  logo: "/assets/images/profile-pic.jpg"
+  favicon: "/assets/images/profile-pic.jpg"
   palette:
     primary: "indigo"
     accent: "deep-orange"
