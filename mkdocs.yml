@@ -10,7 +10,7 @@ nav:
   - About me: aboutme.md
   - Kdb/q:
       - Dictionary:
-          - kdb/dictionary/add-new-item-to-dictionary.md
+          - kdb/dictionary/add-a-new-key-to-dictionary.md
       - Function:
           - kdb/function/function-argument.md
   - Python:
