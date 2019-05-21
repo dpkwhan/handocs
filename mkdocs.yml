@@ -14,7 +14,7 @@ nav:
       - Function:
           - kdb/function/function-argument.md
   - Python:
-      - About: python/about.md
+      - About: python/a-first-taste-of-pathlib.md
   - VS Code:
       - Common: vscode/common/common.md
       - Python: vscode/python/python.md
