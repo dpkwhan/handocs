@@ -14,7 +14,8 @@ nav:
       - Function:
           - kdb/function/function-argument.md
   - Python:
-      - About: python/a-first-taste-of-pathlib.md
+      - A First Taste of pathlib: python/a-first-taste-of-pathlib.md
+      - Evolation of String Formatting: python/evolution-of-string-formatting.md
   - VS Code:
       - Common: vscode/common/common.md
       - Python: vscode/python/python.md
@@ -54,6 +55,7 @@ markdown_extensions:
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
       guess_lang: false
+      linenums: true
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
   - markdown.extensions.meta
