@@ -222,7 +222,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../python/about/" title="Python" class="md-tabs__link">
+        <a href="../../../python/a-first-taste-of-pathlib/" title="Python" class="md-tabs__link">
           Python
         </a>
       
@@ -430,8 +430,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python/about/" title="About" class="md-nav__link">
-      About
+    <a href="../../../python/a-first-taste-of-pathlib/" title="A First Taste of pathlib" class="md-nav__link">
+      A First Taste of pathlib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/evolution-of-string-formatting/" title="Evolation of String Formatting" class="md-nav__link">
+      Evolation of String Formatting
     </a>
   </li>
 
@@ -666,17 +678,36 @@
 <p>Sure you can create an object that seems empty with {}, but that object still has a <strong>proto</strong>
 and the usual hasOwnProperty and other object methods. There is a way, however, to create a pure
 "dictionary" object:</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">dict</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">dict</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 
 <span class="c1">// dict.__proto__ === &quot;undefined&quot;</span>
 <span class="c1">// No object properties exist until you add them</span>
 </pre></div>
+</td></tr></table>
 
 <p>There are absolutely no keys or methods on that object that you don't put there!</p>
 <h3 id="merge-objects">Merge objects<a class="headerlink" href="#merge-objects" title="Permanent link">&para;</a></h3>
 <p>The need to merge multiple objects in JavaScript has been around forever, especially as we started
 creating classes and widgets with options:</p>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;David Walsh&#39;</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;Male&#39;</span> <span class="p">};</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;David Walsh&#39;</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;Male&#39;</span> <span class="p">};</span>
 <span class="kr">const</span> <span class="nx">tools</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">computer</span><span class="o">:</span> <span class="s1">&#39;Mac&#39;</span><span class="p">,</span> <span class="nx">editor</span><span class="o">:</span> <span class="s1">&#39;Atom&#39;</span> <span class="p">};</span>
 <span class="kr">const</span> <span class="nx">attributes</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">handsomeness</span><span class="o">:</span> <span class="s1">&#39;Extreme&#39;</span><span class="p">,</span> <span class="nx">hair</span><span class="o">:</span> <span class="s1">&#39;Brown&#39;</span><span class="p">,</span> <span class="nx">eyes</span><span class="o">:</span> <span class="s1">&#39;Blue&#39;</span> <span class="p">};</span>
 
@@ -693,6 +724,7 @@ creating classes and widgets with options:</p>
 <span class="cm">}</span>
 <span class="cm">*/</span>
 </pre></div>
+</td></tr></table>
                 
                   
                 

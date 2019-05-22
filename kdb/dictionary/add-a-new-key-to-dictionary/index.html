@@ -224,7 +224,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../python/about/" title="Python" class="md-tabs__link">
+        <a href="../../../python/a-first-taste-of-pathlib/" title="Python" class="md-tabs__link">
           Python
         </a>
       
@@ -495,8 +495,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python/about/" title="About" class="md-nav__link">
-      About
+    <a href="../../../python/a-first-taste-of-pathlib/" title="A First Taste of pathlib" class="md-nav__link">
+      A First Taste of pathlib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/evolution-of-string-formatting/" title="Evolation of String Formatting" class="md-nav__link">
+      Evolation of String Formatting
     </a>
   </li>
 
@@ -731,18 +743,26 @@
 <p><span style="display:block;text-align:right">May 13, 2019</span></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Suppose you have an existing dictionary <code>d</code> as follows:</p>
-<div class="codehilite"><pre><span></span>q)d:`firstName`lastName!`David`Han
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>q)d:`firstName`lastName!`David`Han
 q)d
 firstName| David
 lastName | Han
 </pre></div>
+</td></tr></table>
 
 <p>Now I want to add another key to this dictionary to indicate my age, say, <code>d[`age]:30</code>. Unfortunately, you will see this:</p>
-<div class="codehilite"><pre><span></span>q)d[`age]:30
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>q)d[`age]:30
 &#39;type
   [0]  d[`age]:30
               ^
 </pre></div>
+</td></tr></table>
 
 <p>The <code>type</code> error occurs because:</p>
 <ul>
@@ -750,7 +770,18 @@ lastName | Han
 <li>The value type of new item is different from the value type of the existing dictionary</li>
 </ul>
 <h2 id="mixed-value-types">Mixed Value Types<a class="headerlink" href="#mixed-value-types" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>q)d2:`firstName`lastName`zip!(`David;`Han;10583)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>q)d2:`firstName`lastName`zip!(`David;`Han;10583)
 q)d2
 firstName| `David
 lastName | `Han
@@ -763,10 +794,19 @@ lastName | `Han
 zip      | 10583
 age      | 30
 </pre></div>
+</td></tr></table>
 
 <h2 id="uniform-value-type">Uniform Value Type<a class="headerlink" href="#uniform-value-type" title="Permanent link">&para;</a></h2>
 <p>When the value type of the new item is different from the value type of the existing dictionary, we can create a second dictonary with the new key and then merge this dictionary with the existing dictionary. For example</p>
-<div class="codehilite"><pre><span></span>q)d:`firstName`lastName!`David`Han
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>q)d:`firstName`lastName!`David`Han
 q)d
 firstName| David
 lastName | Han
@@ -776,6 +816,7 @@ firstName| `David
 lastName | `Han
 age      | 30
 </pre></div>
+</td></tr></table>
 
 <h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
 <p>When the value type of a dictionary is not known in advance, the second approach provides a more robust way to insert a new entry to an existing dictionary.</p>

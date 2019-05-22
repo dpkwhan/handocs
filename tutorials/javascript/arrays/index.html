@@ -222,7 +222,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../python/about/" title="Python" class="md-tabs__link">
+        <a href="../../../python/a-first-taste-of-pathlib/" title="Python" class="md-tabs__link">
           Python
         </a>
       
@@ -430,8 +430,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python/about/" title="About" class="md-nav__link">
-      About
+    <a href="../../../python/a-first-taste-of-pathlib/" title="A First Taste of pathlib" class="md-nav__link">
+      A First Taste of pathlib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/evolution-of-string-formatting/" title="Evolation of String Formatting" class="md-nav__link">
+      Evolation of String Formatting
     </a>
   </li>
 
@@ -664,20 +676,28 @@
                 <h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
 <h3 id="get-unique-values-of-an-array">Get unique values of an array<a class="headerlink" href="#get-unique-values-of-an-array" title="Permanent link">&para;</a></h3>
 <p>Getting an array of unique values is probably easier than you think:</p>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">uniqueArray</span> <span class="o">=</span> <span class="p">[...</span><span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])];</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">uniqueArray</span> <span class="o">=</span> <span class="p">[...</span><span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">uniqueArray</span><span class="p">);</span> <span class="c1">// [2, 1, 3, 4]</span>
 </pre></div>
+</td></tr></table>
 
 <h3 id="array-and-boolean">Array and Boolean<a class="headerlink" href="#array-and-boolean" title="Permanent link">&para;</a></h3>
 <p>Ever need to filter falsy values (0, undefined, null, false, etc.) out of an array? You 
 may not have known this trick:</p>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">arrayValues</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Han&quot;</span><span class="p">];</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">arrayValues</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Han&quot;</span><span class="p">];</span>
 <span class="kr">const</span> <span class="nx">nonFalsyValues</span> <span class="o">=</span> <span class="nx">arrayValues</span>
   <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">);</span> <span class="c1">// Get rid of bad values</span>
 </pre></div>
+</td></tr></table>
 
 <p>Just pass <code>Boolean</code> and all those falsy value go away!</p>
                 
