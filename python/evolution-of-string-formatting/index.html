@@ -40,7 +40,7 @@
     
     
       
-        <title>Evolation of String Formatting - David Han</title>
+        <title>Evolution of String Formatting - David Han</title>
       
     
     
@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#evolation-of-string-formatting" tabindex="1" class="md-skip">
+      <a href="#evolution-of-string-formatting" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -137,7 +137,7 @@
               David Han
             </span>
             <span class="md-header-nav__topic">
-              Evolation of String Formatting
+              Evolution of String Formatting
             </span>
           
         </div>
@@ -454,9 +454,66 @@
       
     
     
-    <a href="./" title="Evolation of String Formatting" class="md-nav__link md-nav__link--active">
-      Evolation of String Formatting
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Evolution of String Formatting
+      </label>
+    
+    <a href="./" title="Evolution of String Formatting" class="md-nav__link md-nav__link--active">
+      Evolution of String Formatting
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#old-style-formatting" title="Old Style: %-formatting" class="md-nav__link">
+    Old Style: %-formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-style-strformat" title="New Style: str.format()" class="md-nav__link">
+    New Style: str.format()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latest-style-f-string" title="Latest Style: f-string" class="md-nav__link">
+    Latest Style: f-string
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -639,6 +696,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#old-style-formatting" title="Old Style: %-formatting" class="md-nav__link">
+    Old Style: %-formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-style-strformat" title="New Style: str.format()" class="md-nav__link">
+    New Style: str.format()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latest-style-f-string" title="Latest Style: f-string" class="md-nav__link">
+    Latest Style: f-string
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -650,8 +751,101 @@
               
                 
                 
-                <h1 id="evolation-of-string-formatting">Evolation of String Formatting<a class="headerlink" href="#evolation-of-string-formatting" title="Permanent link">&para;</a></h1>
-<p>TODO</p>
+                <h1 id="evolution-of-string-formatting">Evolution of String Formatting<a class="headerlink" href="#evolution-of-string-formatting" title="Permanent link">&para;</a></h1>
+<p><span style="display:block;text-align:right">May 22, 2019</span></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>String formatting is one of the basic features provided by any programming language. Python offers a few different options on how to format a string.</p>
+<h2 id="old-style-formatting">Old Style: %-formatting<a class="headerlink" href="#old-style-formatting" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Variable is string</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;David&#39;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s1">&#39;Han&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;My name is </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;My name is </span><span class="si">%(first_name)s</span><span class="s1"> </span><span class="si">%(last_name)s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">locals</span><span class="p">())</span>
+
+<span class="c1"># Variable is integer</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;I am </span><span class="si">%d</span><span class="s1"> years old&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">age</span><span class="p">))</span>
+
+<span class="c1"># Variable is float</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Pi with 3 decimals is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="new-style-strformat">New Style: str.format()<a class="headerlink" href="#new-style-strformat" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Variable is string</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;David&#39;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s1">&#39;Han&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;My name is {first_name} {last_name}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">locals</span><span class="p">()))</span>
+
+<span class="c1"># Variable is integer</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;I am {age} years old&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">locals</span><span class="p">()))</span>
+
+<span class="c1"># Variable is float</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Pi with 3 decimals is {:.3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="latest-style-f-string">Latest Style: f-string<a class="headerlink" href="#latest-style-f-string" title="Permanent link">&para;</a></h2>
+<p>f-string is introduced in Python 3.6.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Variable is string</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;David&#39;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s1">&#39;Han&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;My name is {first_name} {last_name}&#39;</span><span class="p">)</span>
+
+<span class="c1"># Variable is integer</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;I am {age} years old&#39;</span><span class="p">)</span>
+
+<span class="c1"># Variable is float</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Pi with 3 decimals is {pi:.4}&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>For additional details on f-string, see <a href="https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals">here</a>. </p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>As we can see from above, the latest f-string formatting style is dramatically easier to use and understand. Two excellent articles about Python formatting are:</p>
+<ul>
+<li><a href="https://realpython.com/python-f-strings/">Python 3's f-Strings: An Improved String Formatting Syntax</a></li>
+<li><a href="https://pyformat.info/">Using % and .format() for great good!</a></li>
+</ul>
                 
                   
                 
