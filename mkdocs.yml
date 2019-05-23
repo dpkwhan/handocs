@@ -20,10 +20,8 @@ nav:
       - Python: vscode/python/python.md
       - JavaScript: vscode/javascript/javascript.md
   - Markets:
-      - Rules and Regulations:
-          - markets/rar/ssr.md
-      - Financial Data:
-          - markets/data/finra-ats.md
+      - Short Sell Restriction: markets/short-sell-restriction.md
+      - FINRA ATS Data: markets/finra-ats.md
 
 google_analytics:
   - "UA-140259656-1"
