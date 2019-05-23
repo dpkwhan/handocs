@@ -15,7 +15,7 @@ nav:
           - kdb/function/function-argument.md
   - Python:
       - A First Taste of pathlib: python/a-first-taste-of-pathlib.md
-      - Evolation of String Formatting: python/evolution-of-string-formatting.md
+      - Evolution of String Formatting: python/evolution-of-string-formatting.md
   - VS Code:
       - Common: vscode/common/common.md
       - Python: vscode/python/python.md
