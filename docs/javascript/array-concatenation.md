@@ -1,5 +1,7 @@
 # Array Concatenation
 
+## Introduction
+
 Array concatenation is very common in JavaScript. In this blog, I provide four different approaches to do this and also provide the performance comparison. Suppose we have two simple arrays like:
 
 ``` javascript
@@ -24,6 +26,8 @@ const a = [...a1, ...a2];
 ```
 
 ## Looped Insertion
+
+<span style="display:block;text-align:right">May 25, 2019</span>
 
 Use a for-of loop to append each element of the second array to the first array.
 
