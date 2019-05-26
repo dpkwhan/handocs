@@ -25,6 +25,8 @@ const a = [...a1, ...a2];
 
 ## Looped Insertion
 
+<span style="display:block;text-align:right">May 25, 2019</span>
+
 Use a for-of loop to append each element of the second array to the first array.
 
 ``` javascript
