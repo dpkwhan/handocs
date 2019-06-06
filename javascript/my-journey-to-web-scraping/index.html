@@ -40,7 +40,7 @@
     
     
       
-        <title>Web Scraping - David Han</title>
+        <title>My Journey to Web Scraping - David Han</title>
       
     
     
@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#web-scraping" tabindex="1" class="md-skip">
+      <a href="#my-journey-to-web-scraping" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -137,7 +137,7 @@
               David Han
             </span>
             <span class="md-header-nav__topic">
-              Web Scraping
+              My Journey to Web Scraping
             </span>
           
         </div>
@@ -468,11 +468,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Web Scraping
+        My Journey to Web Scraping
       </label>
     
-    <a href="./" title="Web Scraping" class="md-nav__link md-nav__link--active">
-      Web Scraping
+    <a href="./" title="My Journey to Web Scraping" class="md-nav__link md-nav__link--active">
+      My Journey to Web Scraping
     </a>
     
       
@@ -744,15 +744,38 @@
               
                 
                 
-                <h1 id="web-scraping">Web Scraping<a class="headerlink" href="#web-scraping" title="Permanent link">&para;</a></h1>
+                <h1 id="my-journey-to-web-scraping">My Journey to Web Scraping<a class="headerlink" href="#my-journey-to-web-scraping" title="Permanent link">&para;</a></h1>
 <p><span style="display:block;text-align:right">May 27, 2019</span></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>I started to learn web scraping techniques over the long weekend of Memorial Day in 2015. The main reason for me to learn this is that one of my colleagues manually downloaded the FINRA ATS data every week from its website. The steps she followed are like this:</p>
+<ul>
+<li>Go to <a href="https://otctransparency.finra.org">https://otctransparency.finra.org</a></li>
+<li>Type in username and password<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li>Answer three security questions</li>
+<li>Click "I Agree" button</li>
+<li>Select the date from the dropdown menu</li>
+<li>Select the "Report Type" radio button</li>
+<li>Click the link to each symbol to download</li>
+<li>Report the above step for each symbol</li>
+</ul>
+<p>You can imagine how tedious this is and very quickly she is bored. I was thinking whether this process could be automated. Then I started to search for a soluation and I found it. The library that can do this job is <code>PhantomJS</code>, a headless web browser scriptable with JavaScript. Over that long weekend four years ago, I learned <code>PhantomJS</code> and wrote my first web crawler to automatically download FINRA ATS data.</p>
+<p>In this blog, I am going to walk through each technology I tried before and the advantages and disadvantages each method has, but I will not discuss each technology in depth. I will provide an real-life example of how to use each technoglogy to scrape data from a website in future blogs.</p>
 <h2 id="phantomjs">PhantomJS<a class="headerlink" href="#phantomjs" title="Permanent link">&para;</a></h2>
+<p>PhantomJS is a headless web browser scriptable with JavaScript. It is very powerful and capable of handling dynamic web pages. This libray opened a brand new window for me and it got my journey to web scraping started.</p>
 <h2 id="selenium-with-python">Selenium with Python<a class="headerlink" href="#selenium-with-python" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.seleniumhq.org/">Selenium</a> automates browsers. Initially, it is built for automating unit/regression testing in web applications. We can also use it for web crawling. <a href="https://selenium-python.readthedocs.io/index.html">Selenium with Python</a> provides an easy-to-use API to use webdriver to interact with web component in a physical web browser. It basically launch your web browser and enable you do whatever you can do manually but in a programmatically way.</p>
 <h2 id="requests-in-python">Requests in Python<a class="headerlink" href="#requests-in-python" title="Permanent link">&para;</a></h2>
 <h2 id="scrapy">Scrapy<a class="headerlink" href="#scrapy" title="Permanent link">&para;</a></h2>
 <h2 id="puppeteer">Puppeteer<a class="headerlink" href="#puppeteer" title="Permanent link">&para;</a></h2>
 <h2 id="curl">Curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>In 2015, the FINRA ATS data is credentials protected and an annual fee is charged to access it. Later FINRA made it free and open to public. A while later, FINRA also made batch data downloading available. In January 2019, FINRA provides API to download its ATS data. Over the years, FINRA's data transparency program made trmendous efforts to make its data more accessible to users.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                 
