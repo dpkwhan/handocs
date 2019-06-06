@@ -761,13 +761,23 @@
 <p>You can imagine how tedious this is and very quickly she is bored. I was thinking whether this process could be automated. Then I started to search for a soluation and I found it. The library that can do this job is <code>PhantomJS</code>, a headless web browser scriptable with JavaScript. Over that long weekend four years ago, I learned <code>PhantomJS</code> and wrote my first web crawler to automatically download FINRA ATS data.</p>
 <p>In this blog, I am going to walk through each technology I tried before and the advantages and disadvantages each method has, but I will not discuss each technology in depth. I will provide an real-life example of how to use each technoglogy to scrape data from a website in future blogs.</p>
 <h2 id="phantomjs">PhantomJS<a class="headerlink" href="#phantomjs" title="Permanent link">&para;</a></h2>
-<p>PhantomJS is a headless web browser scriptable with JavaScript. It is very powerful and capable of handling dynamic web pages. This libray opened a brand new window for me and it got my journey to web scraping started.</p>
+<p><a href="http://phantomjs.org/">PhantomJS</a> is a headless web browser scriptable with JavaScript. It is very powerful and capable of handling dynamic web pages. This libray opened a brand new window for me and it got my journey to web scraping started.</p>
 <h2 id="selenium-with-python">Selenium with Python<a class="headerlink" href="#selenium-with-python" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.seleniumhq.org/">Selenium</a> automates browsers. Initially, it is built for automating unit/regression testing in web applications. We can also use it for web crawling. <a href="https://selenium-python.readthedocs.io/index.html">Selenium with Python</a> provides an easy-to-use API to use webdriver to interact with web component in a physical web browser. It basically launch your web browser and enable you do whatever you can do manually but in a programmatically way.</p>
+<p><a href="https://www.seleniumhq.org/">Selenium</a> automates browsers. Initially, it is built for automating unit/regression testing in web applications. We can also use it for web crawling. <a href="https://selenium-python.readthedocs.io/">Selenium with Python</a> provides an easy-to-use API to use webdriver to interact with web component in a physical web browser. It basically launch your web browser and enable you do whatever you can do manually but in a programmatically way. Selenium with Python script can only run from a Windows machine since it needs to physically launch a browser.</p>
 <h2 id="requests-in-python">Requests in Python<a class="headerlink" href="#requests-in-python" title="Permanent link">&para;</a></h2>
+<p><a href="https://3.python-requests.org/">Requests</a> is an HTTP library for Python, built for Humans and Machines, alike. It is extremely easy and efficient to use if you want to get some static data from a website. Unfortunately if the data from a website is dynamically generated, it is not easy to use Requests to get them since it cannot interact with JavaScript.</p>
 <h2 id="scrapy">Scrapy<a class="headerlink" href="#scrapy" title="Permanent link">&para;</a></h2>
+<p><a href="https://scrapy.org/">Scrapy</a> is also a Python libray built specifically for web scraping. It is very powerful to extract static data you need from a website. It also has the same limitation as <a href="https://3.python-requests.org/">Requests</a> since it cannot interpret JavaScript.</p>
 <h2 id="puppeteer">Puppeteer<a class="headerlink" href="#puppeteer" title="Permanent link">&para;</a></h2>
+<p>From <a href="https://pptr.dev/">Puppeteer</a>'s official documentation site:</p>
+<blockquote>
+<p>Puppeteer is a Node library which provides a high-level API to control Chrome or Chromium over the 
+DevTools Protocol. Puppeteer runs headless by default, but can be configured to run full 
+(non-headless) Chrome or Chromium.</p>
+</blockquote>
+<p>The release of <a href="https://pptr.dev/">Puppeteer</a> by Google basically made <a href="http://phantomjs.org/">PhantomJS</a> unpopular and unnecessary since <a href="https://pptr.dev/">Puppeteer</a> can do everything that <a href="http://phantomjs.org/">PhantomJS</a> can do and offers a lot more features.</p>
 <h2 id="curl">Curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
+<p>The <code>curl</code> tool lets us fetch a given URL from the command-line and sometimes it is the easiest approach to retrieve a static files from a website. It is also very convenient to use <code>curl</code> to fetch data from an API. Later I will show how to use <code>curl</code> to download ATS data from FINRA website.</p>
 <div class="footnote">
 <hr />
 <ol>
