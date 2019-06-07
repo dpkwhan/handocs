@@ -1,5 +1,7 @@
 # Try and Catch in q
 
+<span style="display:block;text-align:right">June 6, 2019</span>
+
 Error handling is one of basic features of any programming language. The proper handling of error in runtime can gives us much more intuitive and easier to understand messages. Here are some basic try-catch examples in Python, JavaScript and Java.
 
 ## Python
