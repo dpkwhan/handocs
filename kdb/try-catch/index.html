@@ -40,7 +40,7 @@
     
     
       
-        <title>Try {...} Catch {...} - David Han</title>
+        <title>Try and Catch in q - David Han</title>
       
     
     
@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#try-catch" tabindex="1" class="md-skip">
+      <a href="#try-and-catch-in-q" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -137,7 +137,7 @@
               David Han
             </span>
             <span class="md-header-nav__topic">
-              Try {...} Catch {...}
+              Try and Catch in q
             </span>
           
         </div>
@@ -182,14 +182,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -203,7 +205,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../add-a-new-key-to-dictionary/" title="Kdb/q" class="md-tabs__link">
+        <a href="../add-a-new-key-to-dictionary/" title="Kdb/q" class="md-tabs__link md-tabs__link--active">
           Kdb/q
         </a>
       
@@ -314,10 +316,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Kdb/q
@@ -338,6 +342,77 @@
     <a href="../add-a-new-key-to-dictionary/" title="Add a New Key to a Dictionary" class="md-nav__link">
       Add a New Key to a Dictionary
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Try and Catch in q
+      </label>
+    
+    <a href="./" title="Try and Catch in q" class="md-nav__link md-nav__link--active">
+      Try and Catch in q
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" title="JavaScript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java" title="Java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q" title="q" class="md-nav__link">
+    q
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -591,6 +666,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" title="JavaScript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java" title="Java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q" title="q" class="md-nav__link">
+    q
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -602,7 +714,81 @@
               
                 
                 
-                <h1 id="try-catch">Try {...} Catch {...}<a class="headerlink" href="#try-catch" title="Permanent link">&para;</a></h1>
+                <h1 id="try-and-catch-in-q">Try and Catch in q<a class="headerlink" href="#try-and-catch-in-q" title="Permanent link">&para;</a></h1>
+<p><span style="display:block;text-align:right">June 6, 2019</span></p>
+<p>Error handling is one of basic features of any programming language. The proper handling of error in runtime can gives us much more intuitive and easier to understand messages. Here are some basic try-catch examples in Python, JavaScript and Java.</p>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">try</span><span class="p">:</span>
+  <span class="n">some_code</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+  <span class="n">handle_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+  <span class="n">other_code</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="nx">someCode</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="n">myNumbers</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myNumbers</span><span class="o">[</span><span class="mi">10</span><span class="o">]);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Something went wrong.&quot;</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;The &#39;try catch&#39; is finished.&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="q">q<a class="headerlink" href="#q" title="Permanent link">&para;</a></h2>
+<p>The other day, one of my colleague asked me how to use try-catch in q. To be frank, I never used it before. A few days ago, I read the following code at line 102 of <a href="https://github.com/BuaBook/kdb-common/blob/master/src/require.q">this script</a>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>loadRes:@[system;&quot;l &quot;,x;{ (`LOAD_FAILURE;x) }];
+</pre></div>
+</td></tr></table>
+
+<p>I am quite familiar with the syntax of loading a script:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>system &quot;l &quot;, &quot;/path/to/a/script.q&quot;
+</pre></div>
+</td></tr></table>
+
+<p>However, in this example the syntaxt is:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>@[f;fx;g]
+</pre></div>
+</td></tr></table>
+
+<p>where <code>f</code> and <code>g</code> are functions and <code>fx</code> is the argument of function <code>f</code>. A little bit research led me to the Kx official documentation site about <a href="https://code.kx.com/v2/ref/apply/#trap">Trap</a>. This is exactly the equivalent form of try-catch in other programmming language. This means that function <code>f</code> is evaluated at <code>fx</code> and function <code>g</code> is evaluated if the evaluation of <code>f</code> fails. More details and examples can be found <a href="https://code.kx.com/v2/ref/apply/#trap">here</a>.</p>
                 
                   
                 
@@ -619,6 +805,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../add-a-new-key-to-dictionary/" title="Add a New Key to a Dictionary" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Add a New Key to a Dictionary
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../function-argument/" title="Function Argument" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Function Argument
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
