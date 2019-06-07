@@ -10,6 +10,7 @@ nav:
   - About me: aboutme.md
   - Kdb/q:
       - Add a New Key to a Dictionary: kdb/add-a-new-key-to-dictionary.md
+      - Try and Catch in q: kdb/try-catch.md
       - Function Argument: kdb/function-argument.md
       - Write Function for RDB and HDB: kdb/write-function-for-rdb-and-hdb.md
   - Python:
