@@ -11,8 +11,6 @@ nav:
   - Kdb/q:
       - Add a New Key to a Dictionary: kdb/add-a-new-key-to-dictionary.md
       - Try and Catch in q: kdb/try-catch.md
-      - Function Argument: kdb/function-argument.md
-      - Write Function for RDB and HDB: kdb/write-function-for-rdb-and-hdb.md
   - Python:
       - A First Taste of pathlib: python/a-first-taste-of-pathlib.md
       - Evolution of String Formatting: python/evolution-of-string-formatting.md
@@ -25,7 +23,6 @@ nav:
       - JavaScript: vscode/javascript/javascript.md
   - Markets:
       - Short Sell Restriction: markets/short-sell-restriction.md
-      - FINRA ATS Data: markets/finra-ats.md
 
 google_analytics:
   - "UA-140259656-1"
