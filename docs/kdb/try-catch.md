@@ -61,6 +61,13 @@ However, in this example the syntaxt is:
 
 where ``f`` and ``g`` are functions and ``fx`` is the argument of function ``f``. A little bit research led me to the Kx official documentation site about [Trap][Trap]. This is exactly the equivalent form of try-catch in other programmming language. This means that function ``f`` is evaluated at ``fx`` and function ``g`` is evaluated if the evaluation of ``f`` fails. More details and examples can be found [here][Trap].
 
+**P.S.:**
+
+[Ferenc Bodon][Ferenc Bodon] pointed out in the LinkedIn comment that this is also covered by ``Q for Mortals`` in [Protected Evaluation][Protected Evaluation] and this functionality is extended further in [``.Q.trp``][.Q.trp] since V3.5.
+
 
 [require.q]: https://github.com/BuaBook/kdb-common/blob/master/src/require.q
 [Trap]: https://code.kx.com/v2/ref/apply/#trap
+[Ferenc Bodon]: https://www.linkedin.com/in/ferencbodon/
+[Protected Evaluation]:https://code.kx.com/q4m3/10_Execution_Control/#1018-protected-evaluation
+[.Q.trp]: https://code.kx.com/v2/ref/dotq/#qtrp-extend-trap
