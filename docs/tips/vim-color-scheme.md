@@ -1,5 +1,11 @@
 # Vim Color Scheme
 
+<span style="display:block;text-align:right">June 20, 2019</span>
+
+<span style="display:block;text-align:center">
+![Vim](../../assets/images/tips/vim.png)
+</span>
+
 The default color scheme for ``vim`` is not very friendly for comments since it has a dark blue color. You can change the color scheme with the following steps:
 
 1. Create an folder ``.vim`` in your home directory:
