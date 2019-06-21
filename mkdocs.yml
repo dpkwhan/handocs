@@ -23,6 +23,8 @@ nav:
       - JavaScript: vscode/javascript/javascript.md
   - Markets:
       - Short Sell Restriction: markets/short-sell-restriction.md
+  - Tips:
+      - Cron Job: tips/cron-job.md
 
 google_analytics:
   - "UA-140259656-1"
