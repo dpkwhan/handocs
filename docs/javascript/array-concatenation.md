@@ -56,7 +56,7 @@ const a = a2.reduce((acc, item) => {
 I created a test case to test the performance of the above four methods in [jsperf.com](https://jsperf.com). Here is the link to the [test case][Test Case].
 
 <span style="display:block;text-align:center">
-![LMNX OHLC](../../assets/images/javascript/array-concatenation-speed.jpg)
+![LMNX OHLC](./../assets/images/javascript/array-concatenation-speed.jpg)
 </span>
 
 Observations:
