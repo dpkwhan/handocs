@@ -25,6 +25,7 @@ nav:
       - Short Sell Restriction: markets/short-sell-restriction.md
   - Tips:
       - Cron Job: tips/cron-job.md
+      - Vim Color Scheme: tips/vim-color-scheme.md
 
 google_analytics:
   - "UA-140259656-1"
