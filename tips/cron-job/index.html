@@ -40,7 +40,7 @@
     
     
       
-        <title>David Han</title>
+        <title>Cron Job - David Han</title>
       
     
     
@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#javascript-snippets" tabindex="1" class="md-skip">
+      <a href="#cron-job" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -137,7 +137,7 @@
               David Han
             </span>
             <span class="md-header-nav__topic">
-              JavaScript Snippets
+              Cron Job
             </span>
           
         </div>
@@ -182,14 +182,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -268,7 +270,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../tips/cron-job/" title="Tips" class="md-tabs__link">
+        <a href="./" title="Tips" class="md-tabs__link md-tabs__link--active">
           Tips
         </a>
       
@@ -567,10 +569,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Tips
@@ -586,11 +590,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../tips/cron-job/" title="Cron Job" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Cron Job
+      </label>
+    
+    <a href="./" title="Cron Job" class="md-nav__link md-nav__link--active">
       Cron Job
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#launch-cron-daemon" title="Launch cron daemon" class="md-nav__link">
+    Launch cron daemon
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -600,7 +642,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tips/vim-color-scheme/" title="Vim Color Scheme" class="md-nav__link">
+    <a href="../vim-color-scheme/" title="Vim Color Scheme" class="md-nav__link">
       Vim Color Scheme
     </a>
   </li>
@@ -632,62 +674,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#arrays" title="Arrays" class="md-nav__link">
-    Arrays
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get-unique-values-of-an-array" title="Get unique values of an array" class="md-nav__link">
-    Get unique values of an array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#array-and-boolean" title="Array and Boolean" class="md-nav__link">
-    Array and Boolean
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#objects" title="Objects" class="md-nav__link">
-    Objects
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-an-empty-object" title="Create an empty object" class="md-nav__link">
-    Create an empty object
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merge-objects" title="Merge objects" class="md-nav__link">
-    Merge objects
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
-    Reference
+  <a href="#launch-cron-daemon" title="Launch cron daemon" class="md-nav__link">
+    Launch cron daemon
   </a>
   
 </li>
@@ -709,89 +697,31 @@
               
                 
                 
-                <h1 id="javascript-snippets">JavaScript Snippets<a class="headerlink" href="#javascript-snippets" title="Permanent link">&para;</a></h1>
-<h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
-<h3 id="get-unique-values-of-an-array">Get unique values of an array<a class="headerlink" href="#get-unique-values-of-an-array" title="Permanent link">&para;</a></h3>
-<p>Getting an array of unique values is probably easier than you think:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">uniqueArray</span> <span class="o">=</span> <span class="p">[...</span><span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])];</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">uniqueArray</span><span class="p">);</span> <span class="c1">// [2, 1, 3, 4]</span>
+                <h1 id="cron-job">Cron Job<a class="headerlink" href="#cron-job" title="Permanent link">&para;</a></h1>
+<p>Check whether cron daemon is running:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pgrep cron
 </pre></div>
 </td></tr></table>
 
-<h3 id="array-and-boolean">Array and Boolean<a class="headerlink" href="#array-and-boolean" title="Permanent link">&para;</a></h3>
-<p>Ever need to filter falsy values (0, undefined, null, false, etc.) out of an array? You 
-may not have known this trick:</p>
+<p>If you see no number, then cron is not running. <code>sudo /etc/init.d/cron start</code> can be used to start cron.</p>
+<p>Rather than invoking init scripts through <code>/etc/init.d</code>, use the service utility, e.g.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service cron start
+</pre></div>
+</td></tr></table>
+
+<h2 id="launch-cron-daemon">Launch cron daemon<a class="headerlink" href="#launch-cron-daemon" title="Permanent link">&para;</a></h2>
+<p>First check whether cron is running. Launch it if not.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">arrayValues</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Han&quot;</span><span class="p">];</span>
-<span class="kr">const</span> <span class="nx">nonFalsyValues</span> <span class="o">=</span> <span class="nx">arrayValues</span>
-  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">);</span> <span class="c1">// Get rid of bad values</span>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">re</span><span class="o">=</span><span class="s1">&#39;^[0-9]+$&#39;</span>
+<span class="nv">cronpid</span><span class="o">=</span><span class="sb">`</span>pgrep cron<span class="sb">`</span>
+<span class="k">if</span> ! <span class="o">[[</span> <span class="nv">$cronpid</span> <span class="o">=</span>~ <span class="nv">$re</span> <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span>
+   service cron start &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="k">fi</span>
 </pre></div>
 </td></tr></table>
-
-<p>Just pass <code>Boolean</code> and all those falsy value go away</p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<h3 id="create-an-empty-object">Create an empty object<a class="headerlink" href="#create-an-empty-object" title="Permanent link">&para;</a></h3>
-<p>Sure you can create an object that seems empty with {}, but that object still has a <strong>proto</strong>
-and the usual hasOwnProperty and other object methods. There is a way, however, to create a pure
-"dictionary" object:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">dict</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-<span class="c1">// dict.__proto__ === &quot;undefined&quot;</span>
-<span class="c1">// No object properties exist until you add them</span>
-</pre></div>
-</td></tr></table>
-
-<p>There are absolutely no keys or methods on that object that you don't put there!</p>
-<h3 id="merge-objects">Merge objects<a class="headerlink" href="#merge-objects" title="Permanent link">&para;</a></h3>
-<p>The need to merge multiple objects in JavaScript has been around forever, especially as we started
-creating classes and widgets with options:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;David Walsh&#39;</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;Male&#39;</span> <span class="p">};</span>
-<span class="kr">const</span> <span class="nx">tools</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">computer</span><span class="o">:</span> <span class="s1">&#39;Mac&#39;</span><span class="p">,</span> <span class="nx">editor</span><span class="o">:</span> <span class="s1">&#39;Atom&#39;</span> <span class="p">};</span>
-<span class="kr">const</span> <span class="nx">attributes</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">handsomeness</span><span class="o">:</span> <span class="s1">&#39;Extreme&#39;</span><span class="p">,</span> <span class="nx">hair</span><span class="o">:</span> <span class="s1">&#39;Brown&#39;</span><span class="p">,</span> <span class="nx">eyes</span><span class="o">:</span> <span class="s1">&#39;Blue&#39;</span> <span class="p">};</span>
-
-<span class="kr">const</span> <span class="nx">summary</span> <span class="o">=</span> <span class="p">{...</span><span class="nx">person</span><span class="p">,</span> <span class="p">...</span><span class="nx">tools</span><span class="p">,</span> <span class="p">...</span><span class="nx">attributes</span><span class="p">};</span>
-<span class="cm">/*</span>
-<span class="cm">Object {</span>
-<span class="cm">  &quot;computer&quot;: &quot;Mac&quot;,</span>
-<span class="cm">  &quot;editor&quot;: &quot;Atom&quot;,</span>
-<span class="cm">  &quot;eyes&quot;: &quot;Blue&quot;,</span>
-<span class="cm">  &quot;gender&quot;: &quot;Male&quot;,</span>
-<span class="cm">  &quot;hair&quot;: &quot;Brown&quot;,</span>
-<span class="cm">  &quot;handsomeness&quot;: &quot;Extreme&quot;,</span>
-<span class="cm">  &quot;name&quot;: &quot;David Walsh&quot;,</span>
-<span class="cm">}</span>
-<span class="cm">*/</span>
-</pre></div>
-</td></tr></table>
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<p>https://davidwalsh.name/javascript-tricks</p>
                 
                   
                 
@@ -808,6 +738,41 @@ creating classes and widgets with options:</p>
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../markets/short-sell-restriction/" title="Short Sell Restriction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Short Sell Restriction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../vim-color-scheme/" title="Vim Color Scheme" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Vim Color Scheme
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
