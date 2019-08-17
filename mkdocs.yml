@@ -17,6 +17,7 @@ nav:
   - JavaScript:
       - Array Concatenation: javascript/array-concatenation.md
       - My Journey to Web Scraping: javascript/my-journey-to-web-scraping.md
+      - Charting Library in JavaScript: javascript/bubble-chart-in-javascript.md
   - VS Code:
       - Common: vscode/common/common.md
       - Python: vscode/python/python.md
@@ -40,17 +41,26 @@ extra:
 
 theme:
   name: "material"
-  logo: "./assets/images/profile-pic.jpg"
+  logo: assets/images/profile-pic.jpg
   favicon: "./assets/images/profile-pic.jpg"
   palette:
     primary: "indigo"
     accent: "deep-orange"
   feature:
     tabs: true
-  extra_css:
-    - css/extra.css
-  extra_javascript:
-    - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"
+
+extra_css:
+  - assets/css/extra.css
+  - assets/css/charting.css
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"
+  - "https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts.min.js"
+  - "https://code.highcharts.com/highcharts.js"
+  - "https://code.highcharts.com/highcharts-more.js"
+  - "https://code.highcharts.com/modules/exporting.js"
+  - "https://code.highcharts.com/modules/export-data.js"
+  - "https://cdn.plot.ly/plotly-latest.min.js"
+  - assets/js/charting.js
 
 markdown_extensions:
   - markdown.extensions.admonition
