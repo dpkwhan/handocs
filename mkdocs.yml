@@ -24,6 +24,7 @@ nav:
       - JavaScript: vscode/javascript/javascript.md
   - Markets:
       - Short Sell Restriction: markets/short-sell-restriction.md
+      - Equities Market Symbology: markets/symbology.md
   - Tips:
       - Cron Job: tips/cron-job.md
       - Vim Color Scheme: tips/vim-color-scheme.md
@@ -61,6 +62,7 @@ extra_javascript:
   - "https://code.highcharts.com/modules/export-data.js"
   - "https://cdn.plot.ly/plotly-latest.min.js"
   - assets/js/charting.js
+  - assets/js/finra.ats.js
 
 markdown_extensions:
   - markdown.extensions.admonition
