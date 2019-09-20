@@ -20,7 +20,7 @@ Some examples:
 |  XXXa.N  |    XXX A    |           Class A |
 | XXX_w.N  |   XXX WI    |           Warrant |
 | XXX_r.N  |   XXX RT    |             Right |
-| XXX_pb.N |   XXX PRA   | Preferred Class B |
+| XXX_pb.N |   XXX PRB   | Preferred Class B |
 
 ### ISIN
 An International Securities Identification Number (ISIN) is a code that uniquely identifies a specific securities issue.
