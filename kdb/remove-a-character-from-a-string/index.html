@@ -695,18 +695,42 @@
                 <h1 id="removing-a-character-from-a-string">Removing a Character from a String<a class="headerlink" href="#removing-a-character-from-a-string" title="Permanent link">&para;</a></h1>
 <p><span style="display:block;text-align:right">Nov 9, 2019</span></p>
 <p>Removing a character from a string. For example, convert <code>2019.11.09</code> to <code>20191109</code> by removing the dot:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>s:&quot;2019.11.09&quot;;
-\t do[1000000;except[;&quot;.&quot;] s]
-\t do[1000000;ssr[s;&quot;.&quot;;&quot;&quot;]]
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>s:&quot;2019.11.09&quot;;
 </pre></div>
 </td></tr></table>
 
-<p>The first one took 404 ms, but the second one took 2109 ms on my PC. Using <code>except</code> is five times faster than string search and replacement (<code>ssr</code>). Furthermore, if function projection is replaced, the speed is further improved. The code belows takes 328 ms to finish.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>\t do[1000000;s except &quot;.&quot;]
-</pre></div>
-</td></tr></table>
+<table>
+<thead>
+<tr>
+<th align="center">No.</th>
+<th align="left">Method</th>
+<th align="center">Execution Time (milliseconds)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left"><code>do[1000000;ssr[s;".";""]]</code></td>
+<td align="center">2,109</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left"><code>do[1000000;except[;"."] s]</code></td>
+<td align="center">404</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left"><code>do[1000000;s except "."]</code></td>
+<td align="center">328</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left"><code>do[1000000;s where s&lt;&gt;"."]</code></td>
+<td align="center">445</td>
+</tr>
+</tbody>
+</table>
+<p>The first one took <span><span class="MathJax_Preview">2,109</span><script type="math/tex">2,109</script></span> ms, but the second one took 404 ms on my PC. Using <code>except</code> is five times faster than string search and replacement (<code>ssr</code>). Furthermore, if function projection is replaced with the juxtaposition form, the speed is further improved and it takes only 328 ms to finish. The speed of method 4 is Okay, but slightly slower than <code>except</code>.</p>
                 
                   
                 
