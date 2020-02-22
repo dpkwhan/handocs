@@ -11,4 +11,4 @@ I am passionate about every aspects of electronic trading, including:
 - regulartions and rules
 - mathematics and statistics
 - realtime and historical analytics
-- programming in Java, Python, Kdb/q, JavaScript, HTML, CSS and more
+- programming in Java, Python, Kdb/q, JavaScript, HTML, CSS and more...

@@ -8,10 +8,8 @@ copyright: "Copyright &copy; 2019 David Han"
 nav:
   - Home: index.md
   - About me: aboutme.md
-  - Kdb/q:
-      - Remove a Character from a String: kdb/remove-a-character-from-a-string.md
-      - Add a New Key to a Dictionary: kdb/add-a-new-key-to-dictionary.md
-      - Try and Catch in q: kdb/try-catch.md
+  - Weekly q:
+      - 2020: weeklyq/2020.md
   - Python:
       - A First Taste of pathlib: python/a-first-taste-of-pathlib.md
       - Evolution of String Formatting: python/evolution-of-string-formatting.md
