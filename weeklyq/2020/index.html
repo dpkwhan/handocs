@@ -385,8 +385,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#20200217" class="md-nav__link">
-    2020.02.17
+  <a href="#20200224" class="md-nav__link">
+    2020.02.24
   </a>
   
 </li>
@@ -692,8 +692,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#20200217" class="md-nav__link">
-    2020.02.17
+  <a href="#20200224" class="md-nav__link">
+    2020.02.24
   </a>
   
 </li>
@@ -716,17 +716,59 @@
                 
                 
                 <h1 id="weekly-kdbq-questions">Weekly Kdb/q Questions<a class="headerlink" href="#weekly-kdbq-questions" title="Permanent link">&para;</a></h1>
-<h2 id="20200217">2020.02.17<a class="headerlink" href="#20200217" title="Permanent link">&para;</a></h2>
-<p>In the electronic trading world, parameterization is so common that some Algorithms are configured with hundreds or thousands of parameters. An algorithmic order can easily has hundreds of parameters and some of which are exposed to users so that they can amend the order attibutes. For example, the participation rate of a POV (Percent Of Volume) order can be amended by users. A common question encountered in the our daily work is which parameters are modified and how it is changed when an amend happens.</p>
-<p><strong>Q:</strong> Below is an example history of a few selected parameters of a POV order. Create a table to show the parameter history with each parameter name as the column name in the table. You need to treat the change in order quantity and/or price limit the same as parameter change.</p>
+<h2 id="20200224">2020.02.24<a class="headerlink" href="#20200224" title="Permanent link">&para;</a></h2>
+<p>Suppose you have an existing dictionary <code>d</code> as follows:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>paramTbl:([]time:`time$();orderQty:`long$();limitPrice:`float$();params:());
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>q)d:`firstName`lastName!`Tom`Jerry
+q)d
+firstName| Tom
+lastName | Jerry
+</code></pre></div>
+</td></tr></table>
+
+<p>Add a new key <code>age</code> with value 37 to this dictionary so that you get:
+q)d
+firstName| Tom
+lastName | Jerry
+age      | 37
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>## 2020.02.17
+
+In the electronic trading world, parameterization is so common that some Algorithms are configured 
+with hundreds or thousands of parameters. An algorithmic order can easily has hundreds of parameters 
+and some of which are exposed to users so that they can amend the order attibutes. For example, the 
+participation rate of a POV (Percent Of Volume) order can be amended by users. A common question 
+encountered in the our daily work is which parameters are modified and how it is changed when an 
+amend happens.
+
+**Q:** Below is an example history of a few selected parameters of a POV order. Create a table to 
+show the parameter history with each parameter name as the column name in the table. You need to 
+treat the change in order quantity and/or price limit the same as parameter change.
+
+```q
+paramTbl:([]time:`time$();orderQty:`long$();limitPrice:`float$();params:());
 `paramTbl insert (09:30:56.123;500000;0n;`StartTime`ParticipationRate!(10:00:00.000;0.08));
 `paramTbl insert (09:35:44.735;500000;0n;`StartTime`ParticipationRate!(09:40:00.000;0.08));
 `paramTbl insert (10:01:25.941;500000;0n;`StartTime`ParticipationRate`Urgency!(09:40:00.000;0.12;`Medium));
@@ -735,8 +777,7 @@
 `paramTbl insert (11:00:52.092;600000;45.27;`StartTime`ParticipationRate`MinParcipationRate`MaxParcipationRate`Urgency!(09:40:00.000;0.12;0.10;0.14;`Medium));
 `paramTbl insert (11:00:52.092;1000000;0n;`StartTime`ParticipationRate`Urgency!(09:40:00.000;0.15;`Medium));
 </code></pre></div>
-</td></tr></table>
-
+</td></tr></table></p>
 <p>The final output table should look like as follows. Note in kdb table, the empty cell in the table below should have proper null value.</p>
 <table>
 <thead>
@@ -824,6 +865,48 @@
 </tr>
 </tbody>
 </table>
+<p><strong>A:</strong> The answer below shows a few tips about dictionary manipulation:</p>
+<ul>
+<li>Use <code>raze</code> to merge multiple dictionaries into a single dictionary</li>
+<li>Find the proper null values for each dictionary key</li>
+<li>Merge two dictionaries with comma</li>
+<li>Merge two tables side by side</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>flattenParams:{[paramTbl]
+    / Merge all parameter into a single dictionary so as to get a full list of parameter names
+    allParams:raze exec params from paramTbl;
+
+    / Find the null value for each parameter name
+    nullValues:(key allParams)!(enlist each value allParams)[;1];
+
+    / Create a table of &quot;parameter&quot; change history of order qty and limit price
+    params1:select time,OrderQty:orderQty,LimitPrice:limitPrice from paramTbl;
+
+    / Set a proper null value to parameters that are not present
+    params2:exec {x,y}[nullValues;] each params from paramTbl;
+
+    / Combine the normal parameters with the pseudo parameters
+    params1,&#39;params2
+  };
+flattenParams[paramTbl]
+</code></pre></div>
+</td></tr></table>
                 
                   
                 
