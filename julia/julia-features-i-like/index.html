@@ -1,0 +1,980 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learning is a lifelong journey">
+      
+      
+      
+        <meta name="author" content="David Han">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/profile-pic.jpg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>Julia Features I like - David Han</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/charting.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140259656-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#julia-features-i-like" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="David Han" class="md-header-nav__button md-logo" aria-label="David Han">
+      
+  <img src="../../assets/images/profile-pic.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            David Han
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Julia Features I like
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="David Han" class="md-nav__button md-logo" aria-label="David Han">
+      
+  <img src="../../assets/images/profile-pic.jpg" alt="logo">
+
+    </a>
+    David Han
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aboutme/" class="md-nav__link">
+        About me
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dpkwhan.github.io/weeklyq/" class="md-nav__link">
+        Weekly q
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        Julia
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Julia" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Julia
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Julia Features I like
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Julia Features I like
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-passing" class="md-nav__link">
+    Parameter passing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duck-typing" class="md-nav__link">
+    Duck typing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-interpolation" class="md-nav__link">
+    String interpolation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triple-quoted-string-literal" class="md-nav__link">
+    Triple quoted string literal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-expression" class="md-nav__link">
+    Mathematical expression
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-function" class="md-nav__link">
+    Math function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ternary-operator" class="md-nav__link">
+    Ternary operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/a-first-taste-of-pathlib/" class="md-nav__link">
+        A First Taste of pathlib
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/evolution-of-string-formatting/" class="md-nav__link">
+        Evolution of String Formatting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        JavaScript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/array-concatenation/" class="md-nav__link">
+        Array Concatenation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/my-journey-to-web-scraping/" class="md-nav__link">
+        My Journey to Web Scraping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/bubble-chart-in-javascript/" class="md-nav__link">
+        Charting Library in JavaScript
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+      
+      <label class="md-nav__link" for="nav-7">
+        VS Code
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="VS Code" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          VS Code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode/common/common/" class="md-nav__link">
+        Common
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode/python/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode/javascript/javascript/" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Markets
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Markets" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Markets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markets/short-sell-restriction/" class="md-nav__link">
+        Short Sell Restriction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markets/symbology/" class="md-nav__link">
+        Equities Market Symbology
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+      
+      <label class="md-nav__link" for="nav-9">
+        Tips
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tips" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tips/cron-job/" class="md-nav__link">
+        Cron Job
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tips/vim-color-scheme/" class="md-nav__link">
+        Vim Color Scheme
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-passing" class="md-nav__link">
+    Parameter passing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duck-typing" class="md-nav__link">
+    Duck typing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-interpolation" class="md-nav__link">
+    String interpolation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triple-quoted-string-literal" class="md-nav__link">
+    Triple quoted string literal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-expression" class="md-nav__link">
+    Mathematical expression
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-function" class="md-nav__link">
+    Math function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ternary-operator" class="md-nav__link">
+    Ternary operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="julia-features-i-like">Julia Features I like<a class="headerlink" href="#julia-features-i-like" title="Permanent link">&para;</a></h1>
+<p>I summarize a few features I like, especially compared with Python.</p>
+<h2 id="parameter-passing">Parameter passing<a class="headerlink" href="#parameter-passing" title="Permanent link">&para;</a></h2>
+<p>The in-place modifiction to mutable parameters passed to a function is quite common in many programming languranges and this is a frequent source of bugs. Users do not know this until you read the documentation carefully. </p>
+<p>Julia has a convention to distinguish functions with copying or modifying parameters by appending <code>!</code> to the function name with parameters modified.</p>
+<p><strong>Copying Version:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+ <span class="mi">3</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">v</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">3</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+</code></pre></div>
+<p><strong>Modifying Version:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="n">sort!</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="n">v</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+ <span class="mi">3</span>
+</code></pre></div>
+<h2 id="duck-typing">Duck typing<a class="headerlink" href="#duck-typing" title="Permanent link">&para;</a></h2>
+<p>If you do not know what duck typing is, <a href="https://en.wikipedia.org/wiki/Duck_typing">here</a> is a quick review. Duck typing is associated with dynamic typing, in contrast with static typing languranges like Java and C++.</p>
+<p>Both Python and Julia support duck typing, but Julia is superior to Python because of it is strong typed.</p>
+<h2 id="string-interpolation">String interpolation<a class="headerlink" href="#string-interpolation" title="Permanent link">&para;</a></h2>
+<p><strong>Julia:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">whom</span> <span class="o">=</span> <span class="s">&quot;David&quot;</span><span class="p">;</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="s">&quot;Hello, </span><span class="si">$whom</span><span class="s">.</span><span class="se">\n</span><span class="s">&quot;</span>
+<span class="s">&quot;Hello, David.</span><span class="se">\n</span><span class="s">&quot;</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="s">&quot;1 + 2 = </span><span class="si">$</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="s">&quot;</span>
+<span class="s">&quot;1 + 2 = 3&quot;</span>
+</code></pre></div>
+<p><strong>Python:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">whom</span> <span class="o">=</span> <span class="s2">&quot;David&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">whom</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s1">&#39;Hello, David.</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;1 + 2 = </span><span class="si">{</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="s1">&#39;1 + 2 = 3&#39;</span>
+</code></pre></div>
+<h2 id="triple-quoted-string-literal">Triple quoted string literal<a class="headerlink" href="#triple-quoted-string-literal" title="Permanent link">&para;</a></h2>
+<p>Below is a simple example for Julia and Python. Note the difference in newline and indentation.</p>
+<p><strong>Julia:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">           Hello,</span>
+<span class="s">           world.</span>
+<span class="s">         &quot;&quot;&quot;</span>
+<span class="s">&quot;  Hello,</span><span class="se">\n</span><span class="s">  world.</span><span class="se">\n</span><span class="s">&quot;</span>
+</code></pre></div>
+<p><strong>Python:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">           Hello,</span>
+<span class="s2">           world.</span>
+<span class="s2">         &quot;&quot;&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span>
+<span class="s1">&#39;</span><span class="se">\n</span><span class="s1">           Hello,</span><span class="se">\n</span><span class="s1">           world.</span><span class="se">\n</span><span class="s1">         &#39;</span>
+</code></pre></div>
+<p>Two noticable differences I like Julia better than Python:</p>
+<ul>
+<li>First, triple-quoted strings are dedented to the level of the least-indented line. This is useful for defining strings within code that is indented. So basically you can use the closing triple quote to determine how many spaces to indent.</li>
+<li>Second, if the opening triple quote is followed by a newline, the newline is stripped from the resulting string.</li>
+</ul>
+<h2 id="mathematical-expression">Mathematical expression<a class="headerlink" href="#mathematical-expression" title="Permanent link">&para;</a></h2>
+<p><strong>Julia:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">2</span><span class="n">x</span>
+<span class="mi">10</span>
+</code></pre></div>
+<p><strong>Python:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="mi">10</span>
+</code></pre></div>
+<h2 id="math-function">Math function<a class="headerlink" href="#math-function" title="Permanent link">&para;</a></h2>
+<p><strong>Julia:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="n">x</span><span class="p">;</span> <span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">10</span>
+</code></pre></div>
+<p><strong>Python:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">10</span>
+</code></pre></div>
+<p>Creators of Julia must be mathematicians!</p>
+<h2 id="ternary-operator">Ternary operator<a class="headerlink" href="#ternary-operator" title="Permanent link">&para;</a></h2>
+<p><strong>Julia:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="o">?</span> <span class="s">&quot;less than&quot;</span> <span class="o">:</span> <span class="s">&quot;not less than&quot;</span>
+<span class="s">&quot;less than&quot;</span>
+</code></pre></div>
+<p><strong>Python:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;less than&quot;</span> <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="k">else</span> <span class="s2">&quot;not less than&quot;</span>
+<span class="s1">&#39;less than&#39;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s2">&quot;not less than&quot;</span><span class="p">,</span> <span class="s2">&quot;less than&quot;</span><span class="p">][</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">]</span>
+<span class="s1">&#39;less than&#39;</span>
+</code></pre></div>
+<h2 id="polymorphism">Polymorphism<a class="headerlink" href="#polymorphism" title="Permanent link">&para;</a></h2>
+<p>All dynamic languages support polymorphism, more or less. Julia's polymorphism is superior to Python. Let's see an example.</p>
+<p><strong>Julia:</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Int</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;The input is an integer&quot;</span><span class="p">;</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;The input is a string&quot;</span><span class="p">;</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;The intput is everything else&quot;</span><span class="p">;</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span>
+<span class="n">f</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">3</span> <span class="n">methods</span><span class="p">)</span>
+</code></pre></div>
+Notice the last line shows function <code>f</code> has three methods, which method will be used depends on how many parameters and the types of the values passed to <code>f</code> at run-time. </p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="s">&quot;The input is an integer&quot;</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">)</span>
+<span class="s">&quot;The input is a string&quot;</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="s">&quot;The intput is everything else&quot;</span>
+</code></pre></div>
+<p><strong>Python:</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;This is my first implementation&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;This is my second implementation&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="s1">&#39;This is my second implementation&#39;</span>
+</code></pre></div>
+In Python, the second implemention will overwrite the first one as expected.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../aboutme/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                About me
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../python/a-first-taste-of-pathlib/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                A First Taste of pathlib
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 David Han
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts.min.js"></script>
+      
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+      
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+      
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      
+        <script src="../../assets/js/charting.js"></script>
+      
+        <script src="../../assets/js/finra.ats.js"></script>
+      
+    
+  </body>
+</html>
