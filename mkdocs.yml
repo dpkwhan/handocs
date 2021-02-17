@@ -3,13 +3,14 @@ site_description: Learning is a lifelong journey
 site_author: David Han
 
 # Copyright
-copyright: "Copyright &copy; 2019 David Han"
+copyright: "Copyright &copy; 2021 David Han"
 
 nav:
   - Home: index.md
   - About me: aboutme.md
-  - Weekly q:
-      - 2020: weeklyq/2020.md
+  - Weekly q: https://dpkwhan.github.io/weeklyq/
+  - Julia:
+      - Julia Features I like: julia/julia-features-i-like.md
   - Python:
       - A First Taste of pathlib: python/a-first-taste-of-pathlib.md
       - Evolution of String Formatting: python/evolution-of-string-formatting.md
@@ -32,17 +33,10 @@ google_analytics:
   - "UA-140259656-1"
   - "auto"
 
-extra:
-  social:
-    - type: "github"
-      link: "https://github.com/dpkwhan"
-    - type: "linkedin"
-      link: "https://www.linkedin.com/in/zhaohuihan/"
-
 theme:
-  name: "material"
+  name: material
   logo: assets/images/profile-pic.jpg
-  favicon: "./assets/images/profile-pic.jpg"
+  favicon: assets/images/profile-pic.jpg
   palette:
     primary: "indigo"
     accent: "deep-orange"
@@ -80,7 +74,9 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
